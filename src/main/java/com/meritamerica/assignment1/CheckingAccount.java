@@ -12,10 +12,10 @@ public class CheckingAccount {
 		
 	}
 	boolean withdraw(double amount) {
-		
+		return true;
 	}
-	boolean deposit(double amount) {
-		
+	static boolean deposit(double amount) {
+		return true;
 	}
 	double futureValue(int years) {
 		
