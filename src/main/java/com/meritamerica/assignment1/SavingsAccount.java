@@ -15,14 +15,14 @@ public class SavingsAccount {
 		return SAVINGS_RATE;
 	}
 	boolean withdraw(double amount) {
-		if(balance >= amount) {
-			balance += amount;
+		if(amount <= balance) {
+			balance -= amount;
 			return true;
 		}
 		return false;
 	}
 	boolean deposit(double amount) {
-		if(balance >= amount) {
+		if(amount > 0) {
 			balance += amount;
 			return true;
 		}
@@ -32,8 +32,8 @@ public class SavingsAccount {
 		return balance * Math.pow(1 + SAVINGS_RATE, years);
 	}
 	public String toString() {
-		return "Savings Account Balance: $" + getBalance() + "\n" +
-		"Savings Account Interest Rate: " + SAVINGS_RATE + "\n" +
-		"Savings Account Balance in 3 years: " + futureValue(3);
+		return "Savings Account Balance: $" + String.format("%.2f", getBalance()) + "\n" +
+		"Savings Account Interest Rate: " + (100 * SAVINGS_RATE) + "%\n" +
+		"Savings Account Balance in 3 years: " + String.format("%.2f", futureValue(3));
 	}
 }

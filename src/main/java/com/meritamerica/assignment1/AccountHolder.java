@@ -6,8 +6,8 @@ public class AccountHolder {
 	private String middleName;
 	private String lastName;
 	private String ssn;
-	private double checkingAccountOpeningBalance;
-	private double savingsAccountOpeningBalance;
+	private CheckingAccount checkingAccount = null;
+	private SavingsAccount savingsAccount = null;
 			
 	AccountHolder() {
 	}
@@ -16,8 +16,8 @@ public class AccountHolder {
 		this.middleName = middleName;
 		this.lastName = lastName;
 		this.ssn = ssn;
-		this.savingsAccountOpeningBalance = savingsAccountOpeningBalance;
-		this.savingsAccountOpeningBalance = savingsAccountOpeningBalance;
+		this.checkingAccount = new CheckingAccount(checkingAccountOpeningBalance);
+		this.savingsAccount = new SavingsAccount(savingsAccountOpeningBalance);
 	}
 	String getFirstName() {
 		return firstName;
@@ -44,19 +44,19 @@ public class AccountHolder {
 		this.ssn = ssn;
 	}
 	CheckingAccount getCheckingAccount() {
-		
+		return checkingAccount;
 	}
 	SavingsAccount getSavingsAccount() {
-	
+		return savingsAccount;
 	}
 	public String toString() {
 		return "Name: " + firstName + " " + middleName + " " + lastName + "\n" +
 		"SSN: " + ssn + "\n" +
-		"Checking Account Balance: $" + getCheckingAccount().getBalance() + "\n" +
-		"Checking Account Interest Rate: " + getCheckingAccount().getInterestRate() + "\n" +
-		"Checking Account Balance in 3 years: $" + getCheckingAccount().futureValue(3) + "\n" +
-		"Savings Account Balance : $" + getSavingsAccount().getBalance() + "\n" +
-		"Savings Account Interest Rate: " + getSavingsAccount().getInterestRate() + "\n" +
-		"Savings Account Balance in 3 years: $" + getSavingsAccount().futureValue(3);
+		"Checking Account Balance: $" + String.format("%.2f", getCheckingAccount().getBalance()) + "\n" +
+		"Checking Account Interest Rate: " + (100 * getCheckingAccount().getInterestRate()) + "%\n" +
+		"Checking Account Balance in 3 years: $" + String.format("%.2f", getCheckingAccount().futureValue(3)) + "\n" +
+		"Savings Account Balance : $" + String.format("%.2f", getSavingsAccount().getBalance()) + "\n" +
+		"Savings Account Interest Rate: " + (100 * getSavingsAccount().getInterestRate()) + "%\n" +
+		"Savings Account Balance in 3 years: $" + String.format("%.2f", getSavingsAccount().futureValue(3));
 	}
 }
