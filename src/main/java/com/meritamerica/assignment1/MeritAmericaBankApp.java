@@ -3,15 +3,15 @@ package com.meritamerica.assignment1;
 public class MeritAmericaBankApp {
 	
 	public static void main(String[] args) {
-		AccountHolder smithJ = new AccountHolder("John", "Ryan", "Smith", "1111111111", 100.00, 1000.00);
-		AccountHolder();
-		CheckingAccount.deposit(500.00);
-		SavingsAccount.withdraw(800.00);
-		CheckingAccount();
-		SavingsAccount();
-		AccountHolder robertsR = new AccountHolder("Rachel", "Sarah", "Roberts", "2222222222", 200.00, 500.00);
-		CheckingAccount.deposit(-500.00);
-		SavingsAccount.withdraw(600.00);
-		AccountHolder();
+		AccountHolder smithR = new AccountHolder("Robin", "Evan", "Smith", "234-156-8364", 100.00, 1000.00);
+		System.out.println(smithR);
+		smithR.getCheckingAccount().deposit(500.00);
+		smithR.getSavingsAccount().withdraw(800.00);
+		System.out.println(smithR.getCheckingAccount());
+		System.out.println(smithR.getSavingsAccount());
+		AccountHolder robertsR = new AccountHolder("Rachel", "Sarah", "Roberts", "476-836-3847", 200.00, 500.00);
+		robertsR.getCheckingAccount().deposit(-500.00);
+		robertsR.getSavingsAccount().withdraw(600.00);
+		System.out.println(robertsR);
 	}
 }
