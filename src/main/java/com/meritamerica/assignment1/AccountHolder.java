@@ -1,3 +1,10 @@
+/*
+ * AccountHolder.java
+ * By: Jameson Squyres and Vanessa Marsh
+ * This class contains all of the information on an account holder, and creates their checking
+ * and savings account. Information on the account can be set and retrieved through this class.
+ */
+
 package com.meritamerica.assignment1;
 
 public class AccountHolder {
@@ -9,8 +16,12 @@ public class AccountHolder {
 	private CheckingAccount checkingAccount = null;
 	private SavingsAccount savingsAccount = null;
 			
-	AccountHolder() {
+	AccountHolder() {	// Default constructor
 	}
+	/*
+	 * Create a new AccountHolder with names, ssn, and use the opening balances to create a new checking and savings account
+	 * for the individual account holder.
+	 */
 	AccountHolder(String firstName, String middleName, String lastName, String ssn, double checkingAccountOpeningBalance, double savingsAccountOpeningBalance) {
 		this.firstName = firstName;
 		this.middleName = middleName;
@@ -43,12 +54,16 @@ public class AccountHolder {
 	void setSSN(String ssn) {
 		this.ssn = ssn;
 	}
-	CheckingAccount getCheckingAccount() {
+	CheckingAccount getCheckingAccount() {	// Return the checking account of an account holder
 		return checkingAccount;
 	}
-	SavingsAccount getSavingsAccount() {
+	SavingsAccount getSavingsAccount() {	// Return the savings account of an account holder
 		return savingsAccount;
 	}
+	/*
+	 * Return information on the account holder, including name, ssn, balance, interest rate, and future balance
+	 * formatted to 2 decimal places.
+	 */
 	public String toString() {
 		return "Name: " + firstName + " " + middleName + " " + lastName + "\n" +
 		"SSN: " + ssn + "\n" +

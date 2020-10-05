@@ -1,3 +1,10 @@
+/*
+ * MeritAmericaBankApp.java
+ * By: Jameson Squyres and Vanessa Marsh
+ * This program will create account holders, and it can be used to access the accounts for 
+ * deposits, withdraws, or any of the account information.
+ */
+
 package com.meritamerica.assignment1;
 
 public class MeritAmericaBankApp {
